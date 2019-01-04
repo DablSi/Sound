@@ -62,21 +62,25 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                path = new File(Environment.getExternalStorageDirectory().getPath());
-                if(!path.exists()){
-                    TextView textView = new TextView(MainActivity.this);
-                    textView.setText(R.string.smth);
-                    return;
+                if(isPlayed == null) {
+                    path = new File("/sdcard");
+                    if (!path.exists()) {
+                        TextView textView = new TextView(MainActivity.this);
+                        textView.setText(R.string.smth);
+                        return;
+                    }
+                    List = path.list();
+                    if (List == null) {
+                        TextView textView = new TextView(MainActivity.this);
+                        textView.setText(R.string.smth);
+                        textView.setVisibility(View.VISIBLE);
+                        return;
+                    }
+                    TextView textView = findViewById(R.id.txt);
+                    textView.setText(List[0]);
+                    newThread newThread = new newThread();
+                    newThread.execute();
                 }
-                List = path.list();
-                if(List == null){
-                    TextView textView = new TextView(MainActivity.this);
-                    textView.setText(R.string.smth);
-                    textView.setVisibility(View.VISIBLE);
-                    return;
-                }
-                newThread newThread = new newThread();
-                newThread.execute();
             }
         });
 //        ScrollView scrollView = findViewById(R.id.sv);
@@ -165,12 +169,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         @Override
         protected Void doInBackground(Void... voids) {
-            TextView textView = new TextView(MainActivity.this);
-            textView.setText(List[i]);
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             try {
-                mediaPlayer.setDataSource(path + List[i]);
+                mediaPlayer.setDataSource(path.getAbsolutePath() + List[i]);
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;

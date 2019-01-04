@@ -1,4 +1,4 @@
-#Sun Dec 30 15:45:27 MSK 2018
+#Fri Jan 04 19:33:50 MSK 2019
 base.0=C\:\\Users\\ducks\\IntelliJIDEAProjects\\Bitmap\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex
