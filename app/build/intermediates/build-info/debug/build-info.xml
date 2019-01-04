@@ -2,39 +2,71 @@
 <instant-run
     abi="x86"
     api-level="28"
-    build-mode="COLD"
+    build-mode="FULL"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.1.0"
-    timestamp="1546620945296"
+    timestamp="1546628719755"
     token="5872039870632038513"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="225" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="0" />
     <task
         name="verifier"
-        duration="3" />
+        duration="0" />
 
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
     <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1546618530822"
+        timestamp="1546628719755"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
@@ -52,6 +84,9 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -71,54 +106,6 @@
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1546619625697"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1546620945296"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>
