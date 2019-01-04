@@ -11,6 +11,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                path = android.os.Environment.getExternalStorageDirectory();
+                path = new File(Environment.getExternalStorageDirectory().getPath());
                 if(!path.exists()){
                     TextView textView = new TextView(MainActivity.this);
                     textView.setText(R.string.smth);
