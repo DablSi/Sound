@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             }
         });
+        
 //        ScrollView scrollView = findViewById(R.id.sv);
 //        LinearLayout linearLayout = new LinearLayout(this);
 //        linearLayout.setOrientation(LinearLayout.VERTICAL);
