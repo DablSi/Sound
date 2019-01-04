@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.1.0"
-    timestamp="1546619705487"
+    timestamp="1546620945296"
     token="5872039870632038513"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="172" />
+        duration="225" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="24" />
+        duration="18" />
     <task
         name="verifier"
-        duration="5" />
+        duration="3" />
 
     <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -114,7 +114,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1546619705487"
+        timestamp="1546620945296"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"

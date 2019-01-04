@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View v) {
                 if(isPlayed == null) {
-                    path = new File("/sdcard");
+                    path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
                     if (!path.exists()) {
                         TextView textView = new TextView(MainActivity.this);
                         textView.setText(R.string.smth);
@@ -71,9 +71,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     }
                     List = path.list();
                     if (List == null) {
-                        TextView textView = new TextView(MainActivity.this);
+                        TextView textView = findViewById(R.id.txt);
                         textView.setText(R.string.smth);
-                        textView.setVisibility(View.VISIBLE);
                         return;
                     }
                     TextView textView = findViewById(R.id.txt);
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             }
         });
-        
+
 //        ScrollView scrollView = findViewById(R.id.sv);
 //        LinearLayout linearLayout = new LinearLayout(this);
 //        linearLayout.setOrientation(LinearLayout.VERTICAL);
