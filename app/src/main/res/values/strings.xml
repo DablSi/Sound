@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bitmap</string>
+    <string name="hint">URL of the audiofile</string>
+    <string name="download">Download</string>
+    <string name="url">Wrong URL!</string>
+    <string name="smth">Smth went wrong!</string>
+    <string name="wait">Wait a bit!</string>
+    <string name="add">Add</string>
+    <string name="ready">Ready!</string>
+</resources>

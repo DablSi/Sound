@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Mon Dec 24 18:07:03 MSK 2018
+1.base=C\:\\Users\\ducks\\IntelliJIDEAProjects\\Bitmap\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=DEX
+0.path=classes.dex
+0.set=DEX
+0.base=C\:\\Users\\ducks\\IntelliJIDEAProjects\\Bitmap\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+1.path=classes.dex
