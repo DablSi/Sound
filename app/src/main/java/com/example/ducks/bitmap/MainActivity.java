@@ -86,18 +86,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     String dir=DownloadDirectory + "/sounds";
                     path = new File(dir);
                     if (!path.exists()) {
-                        TextView textView = new TextView(MainActivity.this);
-                        textView.setText(R.string.smth);
+                        TextView textView = findViewById(R.id.txt);
+                        textView.setText(R.string.path);
                         return;
                     }
                     List = path.list();
                     if (List == null) {
-                        TextView textView = new TextView(MainActivity.this);
-                        textView.setText(R.string.smth);
+                        TextView textView = findViewById(R.id.txt);
+                        textView.setText(R.string.empty);
                         return;
                     }
-                    TextView textView = findViewById(R.id.txt);
-                    textView.setText(List[0]);
+                    handler.sendEmptyMessage(1);
                     createNewThread();
                 }
                 else if (!isPlayed) {
@@ -258,6 +257,20 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         @Override
         protected Void doInBackground(Void... voids) {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            try {
+                mediaPlayer.setDataSource(path.getAbsolutePath() + List[i]);
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            try {
+                mediaPlayer.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
             mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
             mediaPlayer.start();
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

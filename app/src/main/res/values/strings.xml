@@ -7,4 +7,6 @@
     <string name="wait">Wait a bit!</string>
     <string name="add">Add</string>
     <string name="ready">Ready!</string>
+    <string name="path">File sounds doesnt exist!</string>
+    <string name="empty">File is empty!</string>
 </resources>
