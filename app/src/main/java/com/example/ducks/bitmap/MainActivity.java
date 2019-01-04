@@ -145,13 +145,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if ((Math.round(Math.toDegrees(accelerometer[0]))) > 200 && isPlayed != null) {
             last0 = true;
         } else if ((Math.round(Math.toDegrees(accelerometer[0]))) < -200 && last0) {
-            if (isPlayed) {
-                mediaPlayer.pause();
-                isPlayed = false;
-            } else {
-                mediaPlayer.start();
-                isPlayed = true;
+            if(isPlayed) {
+                mediaPlayer.stop();
             }
+            i++;
+            newThread newThread = new newThread();
+            newThread.execute();
+            isPlayed = true;
             last0 = false;
         }
     }
