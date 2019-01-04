@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bitmap</string>
+    <string name="app_name">Player</string>
     <string name="hint">URL of the audiofile</string>
     <string name="download">Download</string>
     <string name="url">Wrong URL!</string>

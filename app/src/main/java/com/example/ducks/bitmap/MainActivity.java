@@ -57,40 +57,32 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         geomagnetism = new float[3];
 
         setContentView(R.layout.activity_main);
-        path = android.os.Environment.getExternalStorageDirectory();
-        if(!path.exists()){
-            TextView textView = new TextView(this);
-            textView.setText(R.string.smth);
-            return;
-        }
-        List = path.list();
-        if(List == null){
-            TextView textView = new TextView(this);
-            textView.setText(R.string.smth);
-            textView.setVisibility(View.VISIBLE);
-            return;
-        }
-
-        if(isPlayed == null) {
-            newThread newThread = new newThread();
-            newThread.execute();
-        }
-        else {
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    mediaPlayer.stop();
-                    i++;
-                    newThread newThread = new newThread();
-                    newThread.execute();
+        Button button = findViewById(R.id.play);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                path = new File("/sdcard/Download");
+                if(!path.exists()){
+                    TextView textView = new TextView(MainActivity.this);
+                    textView.setText(R.string.smth);
+                    return;
                 }
-            });
-        }
+                List = path.list();
+                if(List == null){
+                    TextView textView = new TextView(MainActivity.this);
+                    textView.setText(R.string.smth);
+                    textView.setVisibility(View.VISIBLE);
+                    return;
+                }
+                newThread newThread = new newThread();
+                newThread.execute();
+            }
+        });
 //        ScrollView scrollView = findViewById(R.id.sv);
 //        LinearLayout linearLayout = new LinearLayout(this);
 //        linearLayout.setOrientation(LinearLayout.VERTICAL);
 //        scrollView.addView(linearLayout);
-////        for(String s : list){
+//        for(String s : list){
 //            Button button = new Button(this);
 //            button.setText(s);
 //            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -172,6 +164,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         @Override
         protected Void doInBackground(Void... voids) {
+            TextView textView = new TextView(MainActivity.this);
+            textView.setText(List[i]);
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             try {
@@ -187,6 +181,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 return null;
             }
             mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    mediaPlayer.stop();
+                    i++;
+                    newThread newThread = new newThread();
+                    newThread.execute();
+                }
+            });
             isPlayed = true;
             return null;
         }
