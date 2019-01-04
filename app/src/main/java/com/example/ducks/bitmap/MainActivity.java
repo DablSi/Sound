@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                path = new File("/sdcard/Download");
+                path = android.os.Environment.getExternalStorageDirectory();
                 if(!path.exists()){
                     TextView textView = new TextView(MainActivity.this);
                     textView.setText(R.string.smth);
