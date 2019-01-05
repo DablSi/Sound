@@ -35,8 +35,6 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     MediaPlayer mediaPlayer;
-    int mediaPos;
-    int mediaMax;
     Boolean isPlayed = null;
     Boolean last = false;
     Boolean last0 = false;
@@ -86,15 +84,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     String dir=DownloadDirectory + "/sounds";
                     path = new File(dir);
                     if (!path.exists()) {
-                        TextView textView = new TextView(MainActivity.this);
-                        textView.setText(R.string.smth);
+                        TextView textView = findViewById(R.id.txt);
+                        textView.setText(R.string.path);
                         return;
                     }
                     List = path.list();
                     if (List == null) {
-                        TextView textView = new TextView(MainActivity.this);
-                        textView.setText(R.string.smth);
-                        textView.setVisibility(View.VISIBLE);
+                        TextView textView = findViewById(R.id.txt);
+                        textView.setText(R.string.empty);
                         return;
                     }
                     TextView textView = findViewById(R.id.txt);
