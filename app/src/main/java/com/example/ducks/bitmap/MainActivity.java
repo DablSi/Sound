@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             requestPermission(this);
         }
         setContentView(R.layout.activity_main);
+        
         Button button = findViewById(R.id.play);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
