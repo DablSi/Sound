@@ -1714,7 +1714,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3235,13 +3235,15 @@ public final class R {
     public static final int add=0x7f0c0027;
     public static final int app_name=0x7f0c0028;
     public static final int download=0x7f0c0029;
-    public static final int hint=0x7f0c002a;
-    public static final int ready=0x7f0c002b;
-    public static final int search_menu_title=0x7f0c002c;
-    public static final int smth=0x7f0c002d;
-    public static final int status_bar_notification_info_overflow=0x7f0c002e;
-    public static final int url=0x7f0c002f;
-    public static final int wait=0x7f0c0030;
+    public static final int empty=0x7f0c002a;
+    public static final int hint=0x7f0c002b;
+    public static final int path=0x7f0c002c;
+    public static final int ready=0x7f0c002d;
+    public static final int search_menu_title=0x7f0c002e;
+    public static final int smth=0x7f0c002f;
+    public static final int status_bar_notification_info_overflow=0x7f0c0030;
+    public static final int url=0x7f0c0031;
+    public static final int wait=0x7f0c0032;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0d0000;
@@ -7952,7 +7954,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

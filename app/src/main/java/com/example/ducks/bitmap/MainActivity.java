@@ -86,18 +86,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     String dir=DownloadDirectory + "/sounds";
                     path = new File(dir);
                     if (!path.exists()) {
-                        TextView textView = findViewById(R.id.txt);
-                        textView.setText(R.string.path);
+                        TextView textView = new TextView(MainActivity.this);
+                        textView.setText(R.string.smth);
                         return;
                     }
                     List = path.list();
                     if (List == null) {
-                        TextView textView = findViewById(R.id.txt);
-                        textView.setText(R.string.empty);
+                        TextView textView = new TextView(MainActivity.this);
+                        textView.setText(R.string.smth);
+                        textView.setVisibility(View.VISIBLE);
                         return;
                     }
-                    handler.sendEmptyMessage(1);
-                    createNewThread();
+                    TextView textView = findViewById(R.id.txt);
+                    textView.setText(List[0]);
+                    newThread newThread = new newThread();
+                    newThread.execute();
                 }
                 else if (!isPlayed) {
                     mediaPlayer.start();
@@ -255,6 +258,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     class newThread extends AsyncTask<Void, Void, Void> {
 
+
         @Override
         protected Void doInBackground(Void... voids) {
             mediaPlayer = new MediaPlayer();
@@ -271,16 +275,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 e.printStackTrace();
                 return null;
             }
-            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
             mediaPlayer.start();
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
                     mediaPlayer.stop();
                     i++;
-                    createNewThread();
+                    newThread newThread = new newThread();
+                    newThread.execute();
                 }
             });
+            mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
             seekBar = findViewById(R.id.seekBar);
             seekBar.setMax(mediaPlayer.getDuration());
             seekBar.setOnTouchListener(new View.OnTouchListener() {
@@ -291,9 +296,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             });
             handler.sendEmptyMessage(1);
-            isPlayed = true;
             mSeekbarUpdateHandler.postDelayed(mUpdateSeekbar, 0);
             handler.sendEmptyMessage(2);
+            isPlayed = true;
             return null;
         }
     }
