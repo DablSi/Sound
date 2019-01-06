@@ -99,13 +99,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     newThread newThread = new newThread();
                     newThread.execute();
                 }
-                else if (!isPlayed) {
-                    mediaPlayer.start();
-                    isPlayed = true;
-                }
-                else {
+                else if (isPlayed) {
                     mediaPlayer.pause();
                     isPlayed = false;
+                } else {
+                    mediaPlayer.start();
+                    isPlayed = true;
                 }
             }
         });
@@ -115,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View v) {
                 if (isPlayed != null){
+                    mediaPlayer.stop();
+                    mediaPlayer = null;
                     i--;
                     createNewThread();
                 }
@@ -126,6 +127,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onClick(View v) {
                 if (isPlayed != null){
+                    mediaPlayer.stop();
+                    mediaPlayer = null;
                     i++;
                     createNewThread();
                 }
@@ -258,10 +261,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         @Override
         protected Void doInBackground(Void... voids) {
+            if(i == List.length)
+                i = 0;
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             try {
-                mediaPlayer.setDataSource(path.getAbsolutePath() + List[i]);
+                mediaPlayer.setDataSource(path.getAbsolutePath() + "/" + List[i]);
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;
