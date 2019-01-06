@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     newThread newThread = new newThread();
                     newThread.execute();
                 }
-                else if (isPlayed) {
+                else if (isPlayed && mediaPlayer != null) {
                     mediaPlayer.pause();
                     isPlayed = false;
-                } else {
+                } else if (!isPlayed && mediaPlayer != null){
                     mediaPlayer.start();
                     isPlayed = true;
                 }
@@ -116,8 +116,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onClick(View v) {
                 if (isPlayed != null){
                     mediaPlayer.stop();
-                    mediaPlayer = null;
                     i--;
+                    if(i < 0)
+                        i = 0;
                     createNewThread();
                 }
             }
@@ -129,8 +130,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void onClick(View v) {
                 if (isPlayed != null){
                     mediaPlayer.stop();
-                    mediaPlayer = null;
                     i++;
+                    if (i >= List.length)
+                        i = 0;
                     createNewThread();
                 }
             }
@@ -226,9 +228,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         loadSensorData(event);
         SensorManager.getRotationMatrix(rotationMatrix, null, accelerometer, geomagnetism); //получаем матрицу поворота
-        if ((Math.round(Math.toDegrees(accelerometer[1]))) > 600 && isPlayed != null) {
+        if ((Math.round(Math.toDegrees(accelerometer[0]))) > 400 && isPlayed != null && !last0) {
             last = true;
-        } else if ((Math.round(Math.toDegrees(accelerometer[1]))) < 500 && last) {
+        } else if ((Math.round(Math.toDegrees(accelerometer[0]))) < 200 && last && !last0) {
+            last0 = true;
+            last = false;
+        }
+        else if ((Math.round(Math.toDegrees(accelerometer[0]))) > 400 && last0){
             if (isPlayed) {
                 mediaPlayer.pause();
                 isPlayed = false;
@@ -236,20 +242,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 mediaPlayer.start();
                 isPlayed = true;
             }
+            last0 = false;
             last = false;
         }
-
-        if ((Math.round(Math.toDegrees(accelerometer[0]))) > 200 && isPlayed != null) {
-            last0 = true;
-        } else if ((Math.round(Math.toDegrees(accelerometer[0]))) < -200 && last0) {
-            if(isPlayed) {
-                mediaPlayer.stop();
-            }
-            i++;
-            createNewThread();
-            isPlayed = true;
-            last0 = false;
-        }
+        
     }
 
     @Override
@@ -284,10 +280,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 public void onCompletion(MediaPlayer mp) {
                     mediaPlayer.stop();
                     i++;
+                    if(i >= List.length)
+                        i = 0;
                     newThread newThread = new newThread();
                     newThread.execute();
                 }
             });
+
             mSeekbarUpdateHandler.removeCallbacks(mUpdateSeekbar);
             seekBar = findViewById(R.id.seekBar);
             seekBar.setMax(mediaPlayer.getDuration());
