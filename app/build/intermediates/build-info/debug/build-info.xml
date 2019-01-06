@@ -6,25 +6,25 @@
     density="420dpi"
     format="10"
     plugin-version="3.1.0"
-    timestamp="1546700499303"
+    timestamp="1546767103891"
     token="5872039870632038513"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="481" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="68" />
+        duration="0" />
     <task
         name="verifier"
-        duration="20" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -45,6 +45,9 @@
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
+        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
@@ -52,9 +55,6 @@
         type="SPLIT" />
     <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
@@ -65,10 +65,10 @@
 
     <build
         build-mode="FULL"
-        timestamp="1546700499303"
+        timestamp="1546767103891"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -89,6 +89,9 @@
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
@@ -96,9 +99,6 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\ducks\IntelliJIDEAProjects\Bitmap\app\build\intermediates\split-apk\debug\slices\slice_5.apk"

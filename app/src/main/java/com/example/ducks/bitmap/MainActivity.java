@@ -10,6 +10,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.nfc.Tag;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             requestPermission(this);
         }
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.play);
+        ImageButton button = findViewById(R.id.play);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
-        Button button2 = findViewById(R.id.back);
+        ImageButton button2 = findViewById(R.id.back);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
-        Button button3 = findViewById(R.id.next);
+        ImageButton button3 = findViewById(R.id.next);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
